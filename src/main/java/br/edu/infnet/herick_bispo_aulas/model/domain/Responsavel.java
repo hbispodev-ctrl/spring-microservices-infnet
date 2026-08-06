@@ -1,0 +1,41 @@
+package br.edu.infnet.herick_bispo_aulas.model.domain;
+
+public class Responsavel extends Pessoa{
+
+    private String telefone;
+    private boolean receberNotificacoes;
+
+    public Responsavel(){}
+
+    public Responsavel(Long id, String nome, String email, String telefone, boolean receberNotificacoes) {
+        super (id, nome, email);
+        this.telefone = telefone;
+        this.receberNotificacoes = receberNotificacoes;
+    }
+
+    @Override
+    public String toString() {
+
+        return String.format("Responsavel {%s, telefone= %s, receberNotificacoes= %s}",
+                super.toString(),
+                telefone,
+                receberNotificacoes ? "sim": "não"
+        );
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public boolean isReceberNotificacoes() {
+        return receberNotificacoes;
+    }
+
+    public void setReceberNotificacoes(boolean receberNotificacoes) {
+        this.receberNotificacoes = receberNotificacoes;
+    }
+}
