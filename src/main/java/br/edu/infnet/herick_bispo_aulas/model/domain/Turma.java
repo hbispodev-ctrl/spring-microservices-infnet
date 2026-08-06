@@ -1,6 +1,4 @@
-package br.edu.infnet.herick_bispo_api.model.domain;
-
-import org.yaml.snakeyaml.util.Tuple;
+package br.edu.infnet.herick_bispo_aulas.model.domain;
 
 import java.util.ArrayList;
 import java.util.Collections;

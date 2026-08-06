@@ -1,9 +1,9 @@
-package br.edu.infnet.herick_bispo_api.model.domain;
-import java.time.LocalDate;
+package br.edu.infnet.herick_bispo_aulas.model.domain;
 import java.time.LocalDateTime;
 
-public class Comunicado {
+public class Comunicado implements Identificavel {
 
+    private Long id;
     private String titulo;
     private String conteudo;
     private boolean publicado;
@@ -11,7 +11,8 @@ public class Comunicado {
 
     private Turma turma;
 
-    public Comunicado(String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
+    public Comunicado(Long id, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
+        this.id = id;
         this.titulo = titulo;
         this.conteudo = conteudo;
         this.publicado = publicado;
@@ -72,5 +73,14 @@ public class Comunicado {
 
     public void setTurma(Turma turma) {
         this.turma = turma;
+    }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
