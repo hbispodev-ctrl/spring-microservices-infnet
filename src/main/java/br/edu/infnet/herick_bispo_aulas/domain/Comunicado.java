@@ -1,4 +1,4 @@
-package br.edu.infnet.herick_bispo_aulas.model.domain;
+package br.edu.infnet.herick_bispo_aulas.domain;
 import java.time.LocalDateTime;
 
 public class Comunicado implements Identificavel {
@@ -24,7 +24,7 @@ public class Comunicado implements Identificavel {
     @Override
     public String toString() {
 
-        String nomeTurma = turma != null ? turma.getNome() : "Sema turma";
+        String nomeTurma = turma != null ? turma.getNome() : "Sem turma";
 
         return String.format("Comunicado {titulo= %s, conteudo= %s, publicado= %s, dataPublicacao= %s, turms= %s}",
                 titulo,

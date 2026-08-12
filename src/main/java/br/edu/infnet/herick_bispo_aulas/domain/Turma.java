@@ -1,4 +1,4 @@
-package br.edu.infnet.herick_bispo_aulas.model.domain;
+package br.edu.infnet.herick_bispo_aulas.domain;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -80,8 +80,5 @@ public class Turma {
     public List<Comunicado> getComunicados() {
         return Collections.unmodifiableList(comunicados);
     }
-
-    public void setComunicados(List<Comunicado> comunicados) {
-        this.comunicados = comunicados;
-    }
+    
 }
