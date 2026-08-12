@@ -1,4 +1,4 @@
-package br.edu.infnet.herick_bispo_aulas.model.domain;
+package br.edu.infnet.herick_bispo_aulas.domain;
 
 import java.util.ArrayList;
 import java.util.Collections;
