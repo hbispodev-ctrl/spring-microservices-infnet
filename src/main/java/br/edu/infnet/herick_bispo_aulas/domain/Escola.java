@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Escola {
+public class Escola implements Identificavel{
 
     private String nome;
     private String cidade;
@@ -81,4 +81,8 @@ public class Escola {
     }
 
 
+    @Override
+    public Long getId() {
+        return 0L;
+    }
 }

@@ -1,12 +1,9 @@
 package br.edu.infnet.herick_bispo_aulas.service;
 
 import br.edu.infnet.herick_bispo_aulas.domain.Identificavel;
-import br.edu.infnet.herick_bispo_aulas.exception.IdentificadorDublicadoException;
+import br.edu.infnet.herick_bispo_aulas.exception.IdentificadorDuplicadoException;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public abstract class BaseService<T extends Identificavel> {
 
@@ -19,7 +16,7 @@ public abstract class BaseService<T extends Identificavel> {
         validarObjeto(objeto);
 
         if(dados.containsKey(objeto.getId())){
-            throw new IdentificadorDublicadoException("Já existe um objeto com este identificador");
+            throw new IdentificadorDuplicadoException("Já existe um objeto com este identificador");
         }
 
         dados.put(objeto.getId(), objeto);
@@ -44,7 +41,7 @@ public abstract class BaseService<T extends Identificavel> {
     }
 
     //Obter
-    public Collection<T> obterLista(){
+    public List<T> obterLista(){
 
         return new ArrayList<T>(dados.values());
     }

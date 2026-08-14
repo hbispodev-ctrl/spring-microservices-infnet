@@ -1,10 +1,10 @@
 package br.edu.infnet.herick_bispo_aulas.exception;
 
-public class IdentificadorDublicadoException extends RuntimeException {
+public class IdentificadorDuplicadoException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    public IdentificadorDublicadoException(String message) {
+    public IdentificadorDuplicadoException(String message) {
         super(message);
     }
 }

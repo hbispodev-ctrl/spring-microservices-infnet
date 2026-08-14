@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Turma {
+public class Turma implements Identificavel{
 
     private String nome;
     private int anoLetivo;
@@ -80,5 +80,9 @@ public class Turma {
     public List<Comunicado> getComunicados() {
         return Collections.unmodifiableList(comunicados);
     }
-    
+
+    @Override
+    public Long getId() {
+        return 0L;
+    }
 }

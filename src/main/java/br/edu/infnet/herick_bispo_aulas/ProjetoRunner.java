@@ -1,7 +1,7 @@
 package br.edu.infnet.herick_bispo_aulas;
 
 import br.edu.infnet.herick_bispo_aulas.domain.*;
-import br.edu.infnet.herick_bispo_aulas.service.ComunicadoService;
+import br.edu.infnet.herick_bispo_aulas.service.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -10,8 +10,41 @@ import java.util.List;
 
 @Component
 public class ProjetoRunner implements CommandLineRunner {
+
+    private final EscolaService escolaService;
+    private final TurmaService turmaService;
+    private final ComunicadoService comunicadoService;
+    private final ProfessorService professorService;
+    private final ResponsavelService responsavelService;
+
+    private Escola escola;
+    private Turma turma901;
+    private Turma turma801;
+
+    private Comunicado comunicado1;
+    private Comunicado comunicado2;
+    private Comunicado comunicado3;
+
+    private Professor professor;
+    private Responsavel responsavel;
+
+    public ProjetoRunner(EscolaService escolaService,
+                         TurmaService turmaService,
+                         ComunicadoService comunicadoService,
+                         ProfessorService professorService,
+                         ResponsavelService responsavelService){
+
+        this.escolaService = escolaService;
+        this.turmaService = turmaService;
+        this.comunicadoService = comunicadoService;
+        this.professorService = professorService;
+        this.responsavelService = responsavelService;
+    }
+
     @Override
     public void run(String... args) throws Exception {
+
+
 
         Professor professor = new Professor(1L, "Joao","joao@gmail.com", "123", true);
         Responsavel responsavel = new Responsavel(2L, "Maria", "maria@gmail.com", "9999-9999", false);
@@ -54,7 +87,6 @@ public class ProjetoRunner implements CommandLineRunner {
         System.out.println(turma);
 
         //Comunicados
-        ComunicadoService comunicadoService = new ComunicadoService();
         comunicadoService.incluir(comunicado001);
         comunicadoService.incluir(comunicado002);
         comunicadoService.obterLista().forEach(System.out::println);

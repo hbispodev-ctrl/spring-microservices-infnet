@@ -1,4 +1,6 @@
 package br.edu.infnet.herick_bispo_aulas.domain;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDateTime;
 
 public class Comunicado implements Identificavel {
@@ -9,6 +11,7 @@ public class Comunicado implements Identificavel {
     private boolean publicado;
     private LocalDateTime dataPublicacao;
 
+    @JsonIgnore
     private Turma turma;
 
     public Comunicado(Long id, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
