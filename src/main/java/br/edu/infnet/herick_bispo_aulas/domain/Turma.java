@@ -1,5 +1,7 @@
 package br.edu.infnet.herick_bispo_aulas.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,6 +14,7 @@ public class Turma implements Identificavel{
 
     private Escola escola;
 
+    @JsonManagedReference
     private List<Comunicado> comunicados = new ArrayList<Comunicado>();
 
     public Turma(String nome, int anoLetivo, boolean ativa) {

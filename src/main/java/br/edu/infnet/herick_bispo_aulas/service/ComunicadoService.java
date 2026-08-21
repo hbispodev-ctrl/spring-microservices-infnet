@@ -22,18 +22,20 @@ public class ComunicadoService extends BaseService<Comunicado> {
         return publicados;
     }
 
-    public List<Comunicado> obterListaPublicado(){
+    public List<Comunicado> obterListaPublicadosDeclarativo(){
         return obterLista().stream().filter(Comunicado::isPublicado).toList();
     }
 
-    public List<Comunicado> buscaPorTituloDeclarativa(String termo){
+    public List<Comunicado> obterPorTitulo(String termo){
 
-        obterLista().stream()
+        //validarTermo(termo);
+
+        List<Comunicado> resultado = obterLista().stream()
                 .filter(comunicado -> comunicado
                         .getTitulo()
                         .toLowerCase()
                         .contains(termo.toLowerCase()))
                 .toList();
-        return null;
+        return resultado;
     }
 }

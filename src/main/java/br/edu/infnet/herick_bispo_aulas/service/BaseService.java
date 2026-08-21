@@ -2,6 +2,7 @@ package br.edu.infnet.herick_bispo_aulas.service;
 
 import br.edu.infnet.herick_bispo_aulas.domain.Identificavel;
 import br.edu.infnet.herick_bispo_aulas.exception.IdentificadorDuplicadoException;
+import br.edu.infnet.herick_bispo_aulas.exception.RecursoNaoEncontradoException;
 
 import java.util.*;
 
@@ -72,7 +73,7 @@ public abstract class BaseService<T extends Identificavel> {
         }
 
         if(!dados.containsKey(id)){
-            throw new IllegalArgumentException("Nenhum recurso encontrado para esse identificador" + id + ".");
+            throw new RecursoNaoEncontradoException("Nenhum recurso encontrado para esse identificador" + id + ".");
         }
     }
 }
